@@ -1,0 +1,42 @@
+<import src="../template/movieGrid/movieGrid.wxml"/>
+<view class="container">
+	<view class="content">
+
+		<view class="search" bindtap="jumpToSearch">
+			<icon type="search" size="16" color="#c1c6c6"/>
+			<text class="search-movie">搜索电影</text>
+		</view>
+		
+		<view class="page-content">
+			<view class="in_theaters">
+				<view class="session-header">
+					<text class="header-title">影院热映</text>
+					<text class="header-more" data-type="in_theaters" bindtap="bindToMore">更多 ></text>
+				</view>
+				<view class="session-content">
+					<scroll-view scroll-x class="movie-scroll">
+						<!-- 封装成模板在当前页面使用 -->
+						<block wx:for="{{in_theaters}}" wx:key="{{id}}">
+							<template is="movie-grid" data="{{...item}}" />
+						</block>
+					</scroll-view>
+				</view>
+			</view>
+			<view class="coming_soon">
+				<view class="session-header">
+					<text class="header-title">即将上映</text>
+					<text class="header-more" data-type="coming_soon" bindtap="bindToMore">更多 ></text>
+				</view>
+				<view class="session-content">
+					<scroll-view scroll-x class="movie-scroll">
+						<!-- 封装成模板在当前页面使用 -->
+						<block wx:for="{{coming_soon}}" wx:key="{{id}}">
+							<template is="movie-grid" data="{{...item}}" />
+						</block>
+					</scroll-view>
+				</view>
+			</view>
+		</view>
+		
+	</view>
+</view>

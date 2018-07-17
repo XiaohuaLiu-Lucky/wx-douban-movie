@@ -1,0 +1,18 @@
+<import src="../rating/rating.wxml"/>
+<template name="more-movie">
+	<view class="movie-wrap" bindtap="navigateToDetail" data-id="{{id}}">
+		<image type="aspectFill" class="poster" src="{{image}}"></image>
+		<view class="movie-desc">
+			<view class="title">{{title}}</view>
+			<view class="director">{{directors}}</view>
+			<view class="cast">{{casts}}</view>
+			<view class="genre">{{genres}}</view>
+			<view class="rating">
+				<template is="rating" data="{{rating}}"/>
+				<text class="average">{{rating}}</text>
+			</view>
+			<view class="collect_count">{{collect_count}}</view>
+		</view>
+		<view class="btn" catchtap="showAction" data-type="{{type}}">{{action}}</view>
+	</view>
+</template>

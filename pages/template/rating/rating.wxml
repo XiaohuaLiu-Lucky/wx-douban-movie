@@ -1,0 +1,4 @@
+<template name="rating">
+	<view class="allStar rating-star{{rating || 0}}">
+	</view>
+</template>

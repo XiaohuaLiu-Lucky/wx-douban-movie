@@ -1,0 +1,1 @@
+<image src="{{url}}" class="poster" mode="aspectFill" bindtap="backLastPage"></image>

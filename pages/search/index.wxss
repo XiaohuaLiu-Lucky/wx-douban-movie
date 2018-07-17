@@ -1,0 +1,48 @@
+.content {
+	width: 100%;
+	height: 100vh;
+	background-color: #F8F8F8;
+	font-size: 28rpx;
+}
+.search .search-movie {
+	color: #4E4E4E;
+}
+.search .cancel {
+	display: inline-block;
+	height: 90rpx;
+	line-height: 90rpx;
+	color: #9E9E9E;
+}
+.searchResult-list {
+	width: 100%;
+	margin-top: 30rpx;
+	background-color: #fff;
+}
+.searchResult-list .movie-wrap {
+	display: flex;
+	width: 100%;
+	height: 90rpx;
+	padding:20rpx 30rpx;
+	border-bottom: 1px solid #E6E6E6;
+}
+.searchResult-list .left-img {
+	width: 80rpx;
+	margin-right:20rpx;
+}
+.searchResult-list .left-img .poster{
+	width: 100%;
+	height: 100%;
+}
+.searchResult-list .right-desc {
+	flex: 1;
+	padding: 10rpx 0rpx;
+}
+.searchResult-list .title {
+	font-size: 32rpx;
+	font-weight: bold;
+	color: #333;
+}
+.searchResult-list .desc {
+	margin-top: 5rpx;
+	color:#aaa;
+}

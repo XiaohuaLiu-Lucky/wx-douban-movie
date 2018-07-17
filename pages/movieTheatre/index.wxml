@@ -1,0 +1,28 @@
+<import src="../template/more/more.wxml"/>
+<view class="container">
+	<view class="content">
+		
+		 <view class="header">
+		 	<view class="header-title {{active ? 'active' : ''}}" data-type="in_theaters" bindtap="show">正在热映</view>
+			<view class="header-title {{!active ? 'active' : ''}}" data-type="coming_soon" bindtap="show">即将上映</view>
+		 </view>
+
+		 <view class="movie-content">
+			<block wx:if="{{active}}">
+				<scroll-view scroll-y class="scroll-movie" style="height:{{windowHeight}};" lower-threshold="50" bindscrolltolower="scrolltolower">
+					<block wx:for="{{in_theaters}}" wx:key="{{id}}">
+						<template is="more-movie" data="{{...item,type:'in_theaters',action:'购票'}}"/>
+					</block>
+				</scroll-view>
+			</block>
+			<block wx:if="{{!active}}">
+				<scroll-view scroll-y class="scroll-movie" style="height:{{windowHeight}};" lower-threshold="50" bindscrolltolower="scrolltolower">
+					<block  wx:for="{{coming_soon}}" wx:key="{{id}}">
+						<template is="more-movie" data="{{...item,type:'coming_soon',action:'想看'}}"/>
+					</block>
+				</scroll-view>
+			</block>
+		 </view>
+		 <!-- <view class="bottom" wx:if="{{triggler}}">玩命加载中</view> -->
+	</view>
+</view>

@@ -1,0 +1,42 @@
+.allStar {
+	display: inline-block;
+	width: 55px;
+	height: 12px;
+	background-image: url('https://img3.doubanio.com/f/shire/680a4bc4c384199245b080c7104da5be8ed717d3/pics/rating_icons/ic_rating_m.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*border: 1px solid red;*/
+}
+.rating-star0 {
+	background-position: 0px -110px;
+}
+.rating-star1 {
+	background-position: 0px -99px;
+}
+.rating-star2 {
+	background-position: 0px -88px;
+}
+.rating-star3 {
+	background-position: 0px -77px;
+}
+.rating-star4 {
+	background-position: 0px -66px;
+}
+.rating-star5 {
+	background-position: 0px -55px;
+}
+.rating-star6 {
+	background-position: 0px -44px;
+}
+.rating-star7 {
+	background-position: 0px -33px;
+}
+.rating-star8 {
+	background-position: 0px -22px;
+}
+.rating-star9 {
+	background-position: 0px -11px;
+}
+.rating-star10 {
+	background-position: 0px 0px;
+}

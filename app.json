@@ -1,0 +1,15 @@
+{
+	"pages": [
+		"pages/index/index",
+		"pages/movieStar/index",
+		"pages/movieDetail/index",
+		"pages/viewPicture/index",
+		"pages/movieTheatre/index",
+		"pages/search/index"
+	],
+	"window":{
+		"navigationBarBackgroundColor": "#0000FF",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "豆瓣电影"
+	}
+}

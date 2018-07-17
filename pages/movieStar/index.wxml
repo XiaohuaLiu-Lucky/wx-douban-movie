@@ -1,0 +1,32 @@
+<import src="../template/movieGrid/movieGrid.wxml"/>
+<view class="container">
+	<view class="content">
+		<view class="poster-wrap">
+			<image src="{{starResult.image}}" class="poster" bindtap="viewPicture"></image>
+		</view>
+
+		<view class="desc-wrap session">
+			<view class="left-desc">
+				<view class="name">{{starResult.name}}</view>
+				<view class="born_place sameHeight">{{starResult.born_place}}</view>
+				<view class="birthday sameHeight">{{starResult.birthday}}</view>
+				<view class="professions sameHeight">{{starResult.professions}}</view>
+			</view>
+			<view class="right-fans">{{starResult.fans}}</view>
+		</view>
+		<view class="summary-wrap session">
+			<view class="summary-title">简介</view>
+			<view class="summary-content {{showAllDesc ? 'summary-all' : 'summary-3line'}}">{{starResult.summary}}</view>
+			<view wx:if="{{!showAllDesc}}" class="unfold" bindtap="unfold">展开</view>
+			<view wx:elif="{{showAllDesc}}" class="unfold" bindtap="unfold">收起</view>
+		</view>
+		<view class="work-wrap session">
+			<view class="work-title">代表作品</view>
+			<scroll-view scroll-x class="scroll">
+				<block wx:for="{{starResult.works}}" wx:key="{{id}}">
+				<template is="movie-grid" data="{{...item}}"/>
+				</block>
+			</scroll-view>
+		</view>
+	</view>
+</view>

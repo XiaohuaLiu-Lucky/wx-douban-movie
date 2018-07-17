@@ -1,0 +1,54 @@
+<import src="../template/rating/rating.wxml"/>
+<view class="container">
+	<view class="content">
+
+		<view class="poster-wrap">
+			<image src="{{subjectData.image}}" class="poster" mode="aspectFill" bindtap="viewPicture"></image>
+		</view>
+
+		<view class="desc-wrap">
+			<view class="left-desc">
+				<view class="title">{{subjectData.title}}</view>
+				<view class="year_genres">{{subjectData.year_genres}}</view>
+				<view class="original_title">{{subjectData.original_title}}</view>
+				<view class="country">{{subjectData.country}}</view>
+			</view>
+			<view class="right-rating">
+				<view class="rat">{{subjectData.rating}}</view>
+				<template is="rating" data="{{rating:subjectData.rating}}" />
+				<view class="ratings_count">{{subjectData.ratings_count}}</view>
+			</view>
+		</view>
+
+		<view class="wish-wrap">
+			<view class="wish_count" data-wish="wish" bindtap="wish_or_comment">想看</view>
+			<view class="comments_count" data-wish="comment" bindtap="wish_or_comment">看过</view>
+		</view>
+
+		<view class="summary-wrap">
+			<view class="summary-title">简介</view>
+			<view class="summary-wrap-cont">
+				<text class="summary-content {{showAllDesc ? 'summary-all':'summary-3line'}}">{{subjectData.summary}}</text>
+			</view>
+			<block wx:if="{{!showAllDesc}}">
+				<text class="btn" bindtap="unfold">展开</text>
+			</block>
+			<block wx:elif="{{showAllDesc}}">
+				<text class="btn" bindtap="unfold">收起</text>
+			</block>
+		</view>
+
+		<view class="casts-wrap">
+			<view class="cast-title">影人</view>
+			<scroll-view scroll-x class="scroll">
+				<block wx:for="{{subjectData.casts}}" wx:key="id">
+					<view class="cast-content {{index === subjectData.casts.length - 1 ? 'cancelSpace': ''}}" bindtap="navigateToFilmmaker" data-id="{{item.id}}">
+						<image class="cast-poster" src="{{item.image}}" mode="aspectFill"></image>
+						<view class="name">{{item.name}}</view>
+					</view>
+				</block>
+			</scroll-view>
+			
+		</view>
+	</view>
+</view>

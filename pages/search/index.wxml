@@ -1,0 +1,25 @@
+<view class="container">
+	<view class="content">
+		<!-- 在输入框中输入数据，发送请求，拿到数据，之后渲染列表 -->
+		<view class="search">
+			<icon type="search" class="search-icon" size="16" color="#c1c6c6"/>
+			<input type="text" placeholder="影视搜索" class="search-movie" placeholder-style="color: #D9D9D9;" bindinput="bindSearch"/>
+			<text class="cancel" bindtap="backToIndex">取消</text>
+		</view>
+
+		<view class="searchResult-list">
+			<block  wx:for="{{resultArr}}" wx:key="id">
+				<view class="movie-wrap" data-id="{{item.id}}" bindtap="toMovieDetail">
+					<view class="left-img">
+						<image src="{{item.small}}" mode="aspectFill" class="poster"></image>
+					</view>
+					<view class="right-desc">
+						<view class="title">{{item.title}}</view>
+						<view class="desc">{{item.totalData}}</view>
+					</view>
+				</view>
+			</block>
+		</view>
+
+	</view>
+</view>
